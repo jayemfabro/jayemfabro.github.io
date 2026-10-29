@@ -1,7 +1,7 @@
 ﻿// Portfolio Configuration
 const PORTFOLIO_CONFIG = {
     githubUrl: "https://github.com/jayemfabro",
-    email: "jayemfabro@example.com",
+    email: "fabrojayem1@gmail.com",
     linkedin: null,
 };
 
