@@ -1,51 +1,182 @@
 ﻿// Portfolio Configuration
 const PORTFOLIO_CONFIG = {
     githubUrl: "https://github.com/jayemfabro",
-    email: "jayemfabro1@gmail.com",
+    email: "jayemfabro@example.com",
     linkedin: null,
 };
 
 // Projects Data
 const PROJECTS = [
+    // NCIP Internship Projects
     {
         id: 1,
-        title: "School Event Registration System",
-        description: "A system for managing school events and student registrations with an administrative interface.",
-        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        title: "IPITVS — Indigenous Peoples Incident Tracking and Validation System",
+        category: "NCIP Internship Project",
+        role: "IT Intern / Full-Stack Web Developer",
+        employer: "National Commission on Indigenous Peoples (NCIP)",
+        method: "Agile / System Development",
+        description: "Contributed to an internal web-based system for incident tracking and validation. Assisted with system design, workflow analysis, testing, and troubleshooting.",
+        technologies: ["React.js", "Laravel", "MySQL"],
         repoUrl: null,
-        demoUrl: null
+        demoUrl: null,
+        status: "internship"
     },
     {
         id: 2,
-        title: "Resort Management System",
-        description: "Comprehensive resort management solution for handling bookings, room assignments, and customer records.",
-        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        title: "CADT/CALT Dashboard",
+        category: "NCIP Internship Project",
+        role: "IT Intern / Full-Stack Web Developer",
+        employer: "National Commission on Indigenous Peoples (NCIP)",
+        method: "Agile / System Development",
+        description: "Contributed to a dashboard for monitoring and organizing CADT/CALT-related information. Assisted in workflow analysis, system evaluation, and usability testing.",
+        technologies: ["React.js", "Laravel", "MySQL"],
         repoUrl: null,
-        demoUrl: null
+        demoUrl: null,
+        status: "internship"
     },
     {
         id: 3,
-        title: "POS System",
-        description: "Point of Sale system designed for retail businesses with inventory tracking and sales management.",
-        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        title: "GSD Progress Tracker System",
+        category: "NCIP Internship Project",
+        role: "IT Intern / Full-Stack Web Developer",
+        employer: "National Commission on Indigenous Peoples (NCIP)",
+        method: "Agile / System Development",
+        description: "Contributed to a progress tracking system for workflow monitoring and documentation. Participated in system testing, troubleshooting, and requirements analysis.",
+        technologies: ["React.js", "Laravel", "MySQL"],
         repoUrl: null,
-        demoUrl: null
+        demoUrl: null,
+        status: "internship"
     },
+    // Academic/Personal Projects
     {
         id: 4,
-        title: "Inventory Management System",
-        description: "System to track inventory levels, manage products, and monitor stock movements for business operations.",
-        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        title: "ROOMIFY — Computer Vision-Based Room Mapping and Attendance Tracking System",
+        category: "Academic Project (2025)",
+        role: "Developer",
+        employer: "Mindoro State University",
+        method: "Research & Development",
+        description: "Developed a computer vision-based system for room mapping and attendance tracking, applying computer vision concepts to support automated room and attendance monitoring.",
+        technologies: [],
         repoUrl: null,
-        demoUrl: null
+        demoUrl: null,
+        status: "completed"
     },
     {
         id: 5,
-        title: "SystemChecker",
-        description: "System monitoring tool for hardware and software diagnostics and system health checking.",
-        technologies: ["PHP", "HTML", "CSS", "JavaScript"],
+        title: "iMap — Web-Based Mapping for Managing and Visualizing Lot Subdivisions",
+        category: "Academic Project (2025)",
+        role: "Developer",
+        employer: "Mindoro State University",
+        method: "Web Development",
+        description: "Developed a web-based mapping system for managing and visualizing lot subdivisions, with an interactive interface for organizing and presenting mapping information.",
+        technologies: [],
         repoUrl: null,
-        demoUrl: null
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 6,
+        title: "SPEEDUP — Tutorial and Management System",
+        category: "Academic Project (2025)",
+        role: "Developer",
+        employer: "Mindoro State University",
+        method: "Web Development",
+        description: "Developed a tutorial and management system to support the organization and management of tutorial-related activities.",
+        technologies: [],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 7,
+        title: "KAPEREST — POS and Inventory Solution with Real-Time Sales Insights",
+        category: "Academic Project (2024)",
+        role: "Developer",
+        employer: "Mindoro State University",
+        method: "Web Development",
+        description: "Developed a point-of-sale and inventory solution with real-time sales monitoring and sales insights.",
+        technologies: [],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 8,
+        title: "Raymundo Flower Shop",
+        category: "E-commerce",
+        role: "Personal Project Developer",
+        employer: "Personal Project",
+        method: "Web Development",
+        description: "Flower shop web application for product browsing, ordering, and customer purchase workflows.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 9,
+        title: "School Event Registration System",
+        category: "Event Management",
+        role: "Personal Project Developer",
+        employer: "Personal Project",
+        method: "Web Development",
+        description: "School event registration and management system with event statuses, registration tracking, and QR code scanning.",
+        technologies: ["PHP", "MySQL", "JavaScript", "QR Code"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 10,
+        title: "Resort Booking System",
+        category: "Booking Management",
+        role: "Personal Project Developer",
+        employer: "Personal Project",
+        method: "Web Development",
+        description: "Resort booking system with user accounts, role-based access, booking records, and guest information.",
+        technologies: ["Laravel 11", "PHP", "MySQL"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 11,
+        title: "Estrella Foodhub POS",
+        category: "Point of Sale",
+        role: "Personal Project Developer",
+        employer: "Personal Project",
+        method: "Web Development",
+        description: "Food business POS system supporting sales transactions and database-backed business operations.",
+        technologies: ["PHP", "MySQL", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 12,
+        title: "Lemonade",
+        category: "Game Development",
+        role: "Game Developer",
+        employer: "Personal Project",
+        method: "Game Development",
+        description: "Open-world survival game project featuring terrain exploration, mountains, rivers, lakes, forests, and environmental exploration.",
+        technologies: ["Luau"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "completed"
+    },
+    {
+        id: 13,
+        title: "Vape Shop Inventory System",
+        category: "Inventory Management",
+        role: "System Developer (In Progress)",
+        employer: "Proposed Client",
+        method: "Web Development",
+        description: "Proposed client system for tracking product quantities and automatically deducting stock when purchases are recorded.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null,
+        status: "proposed"
     }
 ];
 
@@ -110,9 +241,14 @@ function renderProjects() {
             '<span class="project-tech-tag">' + escapeHtml(tech) + '</span>'
         ).join('');
         
+        let roleHtml = '';
+        if (project.role) {
+            roleHtml = '<div class="project-role"><span class="project-role-label">Role:</span> <span class="project-role-value">' + escapeHtml(project.role) + '</span></div>';
+        }
+        
         const repoLink = project.repoUrl 
             ? '<a href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Repository →</a>'
-            : '<span class="project-link project-link-disabled">Repository (Not published)</span>';
+            : '<span class="project-link project-link-disabled">' + (project.status === 'proposed' ? 'Proposed' : project.status === 'internship' ? 'NCIP Internship Project' : 'Not published') + '</span>';
         
         const demoLink = project.demoUrl 
             ? '<a href="' + escapeHtml(project.demoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>'
@@ -120,12 +256,14 @@ function renderProjects() {
         
         projectCard.innerHTML = 
             '<div class="project-header">' +
-                '<h3 class="project-title">' + escapeHtml(project.title) + '</h3>' +
+                '<div class="project-header-content">' +
+                    '<h3 class="project-title">' + escapeHtml(project.title) + '</h3>' +
+                    (project.category ? '<span class="project-category">' + escapeHtml(project.category) + '</span>' : '') +
+                '</div>' +
             '</div>' +
             '<p class="project-description">' + escapeHtml(project.description) + '</p>' +
-            '<div class="project-tech">' +
-                techTags +
-            '</div>' +
+            roleHtml +
+            (techTags ? '<div class="project-tech">' + techTags + '</div>' : '') +
             '<div class="project-links">' +
                 repoLink +
                 demoLink +

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+    <title>Jay Em Fabro — Software Developer</title>
+    <meta name=\"description\" content=\"Portfolio of Jay Em Fabro - BSIT Graduate | Software Developer based in Roxas, Oriental Mindoro, Philippines.\">
+    <link rel=\"icon\" type=\"image/svg+xml\" href=\"assets/favicon.svg\">
+    
+    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
+    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
+    <link href=\"https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap\" rel=\"stylesheet\">
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/simple-icons-font@v15/font/simple-icons.min.css\">
+    
+    <link rel=\"stylesheet\" href=\"./style.css\">
+</head>
+<body>
+    <div class=\"bg-grid\"></div>
+    <div class=\"noise-overlay\"></div>
+    <div class=\"cursor-glow\" id=\"cursorGlow\"></div>
+    
+    <header class=\"header\">
+        <nav class=\"nav container\">
+            <a href=\"#home\" class=\"nav-brand\">
+                <div class=\"brand-orb\"></div>
+                <span class=\"brand-text\">JAY EM FABRO</span>
+            </a>
+            <button class=\"nav-toggle\" id=\"navToggle\" aria-label=\"Toggle navigation\">
+                <span class=\"toggle-bar\"></span>
+                <span class=\"toggle-bar\"></span>
+                <span class=\"toggle-bar\"></span>
+            </button>
+            <ul class=\"nav-list\" id=\"navList\">
+                <li class=\"nav-item\">
+                    <a href=\"#about\" class=\"nav-link\">About</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#skills\" class=\"nav-link\">Skills</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#projects\" class=\"nav-link\">Work</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#certifications\" class=\"nav-link\">Certifications</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#awards\" class=\"nav-link\">Awards</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a href=\"#contact\" class=\"nav-link nav-link-cta\">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
