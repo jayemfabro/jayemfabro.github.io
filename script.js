@@ -1,0 +1,223 @@
+﻿// Portfolio Configuration
+const PORTFOLIO_CONFIG = {
+    githubUrl: "https://github.com/jayemfabro",
+    email: "jayemfabro@example.com",
+    linkedin: null,
+};
+
+// Projects Data
+const PROJECTS = [
+    {
+        id: 1,
+        title: "School Event Registration System",
+        description: "A system for managing school events and student registrations with an administrative interface.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null
+    },
+    {
+        id: 2,
+        title: "Resort Management System",
+        description: "Comprehensive resort management solution for handling bookings, room assignments, and customer records.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null
+    },
+    {
+        id: 3,
+        title: "POS System",
+        description: "Point of Sale system designed for retail businesses with inventory tracking and sales management.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null
+    },
+    {
+        id: 4,
+        title: "Inventory Management System",
+        description: "System to track inventory levels, manage products, and monitor stock movements for business operations.",
+        technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null
+    },
+    {
+        id: 5,
+        title: "SystemChecker",
+        description: "System monitoring tool for hardware and software diagnostics and system health checking.",
+        technologies: ["PHP", "HTML", "CSS", "JavaScript"],
+        repoUrl: null,
+        demoUrl: null
+    }
+];
+
+// Mobile Navigation
+function initMobileNav() {
+    const navToggle = document.getElementById('navToggle');
+    const navList = document.getElementById('navList');
+    
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+        
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navList.classList.remove('active');
+            });
+        });
+    }
+}
+
+// Smooth Scroll
+function initSmoothScroll() {
+    const navLinks = document.querySelectorAll('.nav-link[href^=\"#\"], .btn[href^=\"#\"]');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#') && href !== '#') {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const navHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+}
+
+// Render Projects
+function renderProjects() {
+    const projectsGrid = document.getElementById('projectsGrid');
+    
+    if (!projectsGrid) return;
+    
+    projectsGrid.innerHTML = '';
+    
+    PROJECTS.forEach(project => {
+        const projectCard = document.createElement('article');
+        projectCard.className = 'project-card';
+        
+        const techTags = project.technologies.map(tech => 
+            '<span class="project-tech-tag">' + escapeHtml(tech) + '</span>'
+        ).join('');
+        
+        const repoLink = project.repoUrl 
+            ? '<a href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Repository →</a>'
+            : '<span class="project-link project-link-disabled">Repository (Not published)</span>';
+        
+        const demoLink = project.demoUrl 
+            ? '<a href="' + escapeHtml(project.demoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>'
+            : '';
+        
+        projectCard.innerHTML = 
+            '<div class="project-header">' +
+                '<h3 class="project-title">' + escapeHtml(project.title) + '</h3>' +
+            '</div>' +
+            '<p class="project-description">' + escapeHtml(project.description) + '</p>' +
+            '<div class="project-tech">' +
+                techTags +
+            '</div>' +
+            '<div class="project-links">' +
+                repoLink +
+                demoLink +
+            '</div>';
+        
+        projectsGrid.appendChild(projectCard);
+    });
+}
+
+// Update Contact Links
+function updateContactLinks() {
+    const emailContact = document.getElementById('emailLink');
+    const githubContact = document.getElementById('githubLink');
+    const linkedinContact = document.getElementById('linkedinLink');
+    
+    if (emailContact && PORTFOLIO_CONFIG.email) {
+        emailContact.href = 'mailto:' + PORTFOLIO_CONFIG.email;
+    }
+    
+    if (githubContact && PORTFOLIO_CONFIG.githubUrl) {
+        githubContact.href = PORTFOLIO_CONFIG.githubUrl;
+    }
+    
+    if (linkedinContact) {
+        if (PORTFOLIO_CONFIG.linkedin) {
+            linkedinContact.href = PORTFOLIO_CONFIG.linkedin;
+            linkedinContact.classList.remove('contact-link-card-disabled');
+            linkedinContact.removeAttribute('title');
+        }
+    }
+}
+
+// Dynamic Footer Year
+function initFooterYear() {
+    const currentYearSpan = document.getElementById('currentYear');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear().toString();
+    }
+}
+
+// Cursor Glow Effect
+function initCursorGlow() {
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (!cursorGlow) return;
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+    }
+    
+    if (window.innerWidth < 768) {
+        cursorGlow.style.display = 'none';
+        return;
+    }
+    
+    cursorGlow.style.display = 'block';
+    
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+    });
+}
+
+// Escape HTML
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+// Initialize
+function init() {
+    initMobileNav();
+    initSmoothScroll();
+    renderProjects();
+    updateContactLinks();
+    initFooterYear();
+    initCursorGlow();
+    
+    window.addEventListener('resize', () => {
+        const cursorGlow = document.getElementById('cursorGlow');
+        if (cursorGlow) {
+            if (window.innerWidth < 768) {
+                cursorGlow.style.display = 'none';
+            } else if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                cursorGlow.style.display = 'block';
+            }
+        }
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}

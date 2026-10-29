@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Em Fabro — Software Developer</title>
+    <meta name="description" content="Portfolio of Jay Em Fabro - BSIT Graduate | Software Developer based in Roxas, Oriental Mindoro, Philippines.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <header class="header">
+        <nav class="nav container">
+            <a href="#home" class="nav-brand">
+                <div class="brand-orb"></div>
+                <span class="brand-text">JAY EM FABRO</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </button>
+            <ul class="nav-list" id="navList">
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link nav-link-cta">Connect</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content">
+                        <div class="hero-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">AVAILABLE FOR OPPORTUNITIES</span>
+                        </div>
+                        <h1 class="hero-title">
+                            <span class="hero-title-line">DEVELOPER</span>
+                            <span class="hero-title-line hero-title-line-glow">JAY EM FABRO</span>
+                            <span class="hero-title-line">BSIT GRADUATE</span>
+                        </h1>
+                        <p class="hero-description">
+                            Architecting digital solutions at the intersection of logic and creativity. Specializing in web systems, database architecture, and scalable applications.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">
+                                <span class="btn-content">Explore Projects</span>
+                                <span class="btn-glow"></span>
+                            </a>
+                            <a href="#contact" class="btn btn-ghost">Initiate Contact</a>
+                        </div>
+                        <div class="hero-metrics">
+                            <div class="metric">
+                                <div class="metric-value">05</div>
+                                <div class="metric-label">PROJECTS</div>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric">
+                                <div class="metric-value">2026</div>
+                                <div class="metric-label">GRADUATED</div>
+                            </div>
+                            <div class="metric-divider"></div>
+                            <div class="metric">
+                                <div class="metric-value">FULL</div>
+                                <div class="metric-label">STACK</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hologram-frame">
+                            <div class="hologram-header">
+                                <div class="hologram-controls">
+                                    <span class="holo-dot"></span>
+                                    <span class="holo-dot"></span>
+                                    <span class="holo-dot"></span>
+                                </div>
+                                <div class="hologram-title">NEURAL.INTERFACE</div>
+                                <div class="hologram-signal">
+                                    <span class="signal-bar"></span>
+                                    <span class="signal-bar"></span>
+                                    <span class="signal-bar"></span>
+                                    <span class="signal-bar"></span>
+                                </div>
+                            </div>
+                            <div class="hologram-body">
+                                <div class="code-stream">
+                                    <div class="code-line-stream">
+                                        <span class="stream-prompt">></span>
+                                        <span class="stream-text">const</span>
+                                        <span class="stream-var">profile</span>
+                                        <span class="stream-eq">=</span>
+                                        <span class="stream-bracket">{</span>
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">name</span>: <span class="stream-str">\"Jay Em Fabro\"</span>,
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">role</span>: <span class="stream-str">\"Software Developer\"</span>,
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">education</span>: <span class="stream-str">\"BSIT MSU 2026\"</span>,
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">stack</span>: [<span class="stream-str">\"Laravel\"</span>, <span class="stream-str">\"React\"</span>, <span class="stream-str">\"PHP\"</span>],
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">database</span>: <span class="stream-str">\"MySQL\"</span>,
+                                    </div>
+                                    <div class="code-line-stream indent">
+                                        <span class="stream-key">status</span>: <span class="stream-str">\"building\"</span>
+                                    </div>
+                                    <div class="code-line-stream">
+                                        <span class="stream-bracket">}</span>;
+                                    </div>
+                                    <div class="code-line-stream">
+                                        <span class="stream-prompt">></span>
+                                        <span class="stream-cursor">_</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hologram-grid-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-bracket">[</span>
+                        <span class="label-text">01_ABOUT</span>
+                        <span class="label-bracket">]</span>
+                    </div>
+                    <h2 class="section-title">SYSTEM.IDENTIFICATION</h2>
+                </div>
+                <div class="about-layout">
+                    <div class="about-terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-prompt">root@jayemfabro:~$</span>
+                            <span class="terminal-cmd">cat about.txt</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="terminal-line">> BSIT Graduate from Mindoro State University (2026)</p>
+                            <p class="terminal-line">> Passionate about building practical software solutions</p>
+                            <p class="terminal-line">> Focus: Web Applications | Systems Development | Database Design</p>
+                            <p class="terminal-line">> Approach: Clean code, functional design, real-world problem solving</p>
+                            <p class="terminal-line terminal-cursor-line">></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-bracket">[</span>
+                        <span class="label-text">02_SKILLS</span>
+                        <span class="label-bracket">]</span>
+                    </div>
+                    <h2 class="section-title">TECH.ARSENAL</h2>
+                </div>
+                <div class="skills-matrix">
+                    <div class="skill-node">
+                        <div class="node-header">
+                            <span class="node-dot"></span>
+                            <span class="node-title">FRONTEND</span>
+                        </div>
+                        <div class="node-content">
+                            <span class="node-item">HTML</span>
+                            <span class="node-item">CSS</span>
+                            <span class="node-item">JavaScript</span>
+                            <span class="node-item">React</span>
+                        </div>
+                    </div>
+                    <div class="skill-node">
+                        <div class="node-header">
+                            <span class="node-dot"></span>
+                            <span class="node-title">BACKEND</span>
+                        </div>
+                        <div class="node-content">
+                            <span class="node-item">PHP</span>
+                            <span class="node-item">Laravel</span>
+                            <span class="node-item">Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-node">
+                        <div class="node-header">
+                            <span class="node-dot"></span>
+                            <span class="node-title">DATABASE</span>
+                        </div>
+                        <div class="node-content">
+                            <span class="node-item">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="skill-node">
+                        <div class="node-header">
+                            <span class="node-dot"></span>
+                            <span class="node-title">TOOLKIT</span>
+                        </div>
+                        <div class="node-content">
+                            <span class="node-item">Git</span>
+                            <span class="node-item">GitHub</span>
+                            <span class="node-item">VS Code</span>
+                            <span class="node-item">XAMPP</span>
+                            <span class="node-item">Composer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-bracket">[</span>
+                        <span class="label-text">03_WORK</span>
+                        <span class="label-bracket">]</span>
+                    </div>
+                    <h2 class="section-title">SELECTED.PROJECTS</h2>
+                </div>
+                <div class="projects-grid" id="projectsGrid"></div>
+            </div>
+        </section>
+
+        <section id="education" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-bracket">[</span>
+                        <span class="label-text">04_EDUCATION</span>
+                        <span class="label-bracket">]</span>
+                    </div>
+                    <h2 class="section-title">ACADEMIC.RECORD</h2>
+                </div>
+                <div class="education-panel">
+                    <div class="edu-header">
+                        <span class="edu-degree">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span>
+                        <span class="edu-year">2026</span>
+                    </div>
+                    <div class="edu-institution">MINDORO STATE UNIVERSITY</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label">
+                        <span class="label-bracket">[</span>
+                        <span class="label-text">05_CONNECT</span>
+                        <span class="label-bracket">]</span>
+                    </div>
+                    <h2 class="section-title">ESTABLISH.CONNECTION</h2>
+                </div>
+                <div class="contact-panel">
+                    <p class="contact-text">Open to software development opportunities, IT-related work, and collaborative projects.</p>
+                    <div class="contact-links-grid">
+                        <a href="mailto:jayemfabro@example.com" class="contact-link-card" id="emailLink">
+                            <div class="contact-card-content">
+                                <span class="contact-card-label">EMAIL</span>
+                                <span class="contact-card-value">jayemfabro@example.com</span>
+                            </div>
+                            <span class="contact-card-arrow">→</span>
+                        </a>
+                        <a href="https://github.com/jayemfabro" target="_blank" rel="noopener noreferrer" class="contact-link-card" id="githubLink">
+                            <div class="contact-card-content">
+                                <span class="contact-card-label">GITHUB</span>
+                                <span class="contact-card-value">@jayemfabro</span>
+                            </div>
+                            <span class="contact-card-arrow">→</span>
+                        </a>
+                        <div class="contact-link-card contact-link-card-disabled" id="linkedinLink" title="Not configured">
+                            <div class="contact-card-content">
+                                <span class="contact-card-label">LINKEDIN</span>
+                                <span class="contact-card-value">NOT.CONFIGURED</span>
+                            </div>
+                            <span class="contact-card-arrow">×</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-brand">
+                        <div class="footer-orb"></div>
+                        <span class="footer-name">JAY EM FABRO</span>
+                    </div>
+                    <p class="footer-tagline">BSIT GRADUATE • SOFTWARE DEVELOPER</p>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-copy">© <span id="currentYear"></span> // ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
