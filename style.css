@@ -1205,3 +1205,27 @@ main {
     color: var(--text-primary);
     font-weight: 500;
 }
+
+/* Additional Responsive Improvements */
+@media (max-width: 640px) {
+    .hero-title { font-size: 1.75rem; }
+    .hero-title-line { font-size: 1.75rem; }
+    .section-title { font-size: 1.5rem; }
+    .nav-brand .brand-text { font-size: 0.75rem; }
+    .container { padding: 0 1rem; }
+    .nav { padding: 0 1rem; }
+    .hero { padding: 5rem 0 3rem; }
+    .section { padding: 3rem 0; }
+    .projects-grid { grid-template-columns: 1fr; gap: 0.875rem; }
+    .project-card { padding: 1.25rem; }
+    .skills-matrix { grid-template-columns: 1fr; }
+    .skill-node { padding: 0; }
+    .node-content { padding: 0.875rem; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .contact-links-grid { gap: 0.5rem; }
+    .contact-link-card { padding: 0.875rem; }
+    .hologram-frame { margin: 0 -0.5rem; }
+    .hologram-body { padding: 1rem; }
+    .code-stream { font-size: 0.75rem; }
+}
+

@@ -10,9 +10,8 @@ const PROJECTS = [
     // NCIP Internship Projects
     {
         id: 1,
-        title: "IPITVS — Indigenous Peoples Incident Tracking and Validation System",
+        title: "IPITVS” Indigenous Peoples Incident Tracking and Validation System",
         category: "NCIP Internship Project",
-        role: "IT Intern / Full-Stack Web Developer",
         employer: "National Commission on Indigenous Peoples (NCIP)",
         method: "Agile / System Development",
         description: "Contributed to an internal web-based system for incident tracking and validation. Assisted with system design, workflow analysis, testing, and troubleshooting.",
@@ -25,7 +24,6 @@ const PROJECTS = [
         id: 2,
         title: "CADT/CALT Dashboard",
         category: "NCIP Internship Project",
-        role: "IT Intern / Full-Stack Web Developer",
         employer: "National Commission on Indigenous Peoples (NCIP)",
         method: "Agile / System Development",
         description: "Contributed to a dashboard for monitoring and organizing CADT/CALT-related information. Assisted in workflow analysis, system evaluation, and usability testing.",
@@ -38,7 +36,6 @@ const PROJECTS = [
         id: 3,
         title: "GSD Progress Tracker System",
         category: "NCIP Internship Project",
-        role: "IT Intern / Full-Stack Web Developer",
         employer: "National Commission on Indigenous Peoples (NCIP)",
         method: "Agile / System Development",
         description: "Contributed to a progress tracking system for workflow monitoring and documentation. Participated in system testing, troubleshooting, and requirements analysis.",
@@ -50,9 +47,8 @@ const PROJECTS = [
     // Academic/Personal Projects
     {
         id: 4,
-        title: "ROOMIFY — Computer Vision-Based Room Mapping and Attendance Tracking System",
+        title: "ROOMIFY” Computer Vision-Based Room Mapping and Attendance Tracking System",
         category: "Academic Project (2025)",
-        role: "Developer",
         employer: "Mindoro State University",
         method: "Research & Development",
         description: "Developed a computer vision-based system for room mapping and attendance tracking, applying computer vision concepts to support automated room and attendance monitoring.",
@@ -63,9 +59,8 @@ const PROJECTS = [
     },
     {
         id: 5,
-        title: "iMap — Web-Based Mapping for Managing and Visualizing Lot Subdivisions",
+        title: "iMap” Web-Based Mapping for Managing and Visualizing Lot Subdivisions",
         category: "Academic Project (2025)",
-        role: "Developer",
         employer: "Mindoro State University",
         method: "Web Development",
         description: "Developed a web-based mapping system for managing and visualizing lot subdivisions, with an interactive interface for organizing and presenting mapping information.",
@@ -76,9 +71,8 @@ const PROJECTS = [
     },
     {
         id: 6,
-        title: "SPEEDUP — Tutorial and Management System",
+        title: "SPEEDUP” Tutorial and Management System",
         category: "Academic Project (2025)",
-        role: "Developer",
         employer: "Mindoro State University",
         method: "Web Development",
         description: "Developed a tutorial and management system to support the organization and management of tutorial-related activities.",
@@ -89,9 +83,8 @@ const PROJECTS = [
     },
     {
         id: 7,
-        title: "KAPEREST — POS and Inventory Solution with Real-Time Sales Insights",
+        title: "KAPEREST” POS and Inventory Solution with Real-Time Sales Insights",
         category: "Academic Project (2024)",
-        role: "Developer",
         employer: "Mindoro State University",
         method: "Web Development",
         description: "Developed a point-of-sale and inventory solution with real-time sales monitoring and sales insights.",
@@ -104,7 +97,6 @@ const PROJECTS = [
         id: 8,
         title: "Raymundo Flower Shop",
         category: "E-commerce",
-        role: "Personal Project Developer",
         employer: "Personal Project",
         method: "Web Development",
         description: "Flower shop web application for product browsing, ordering, and customer purchase workflows.",
@@ -117,7 +109,6 @@ const PROJECTS = [
         id: 9,
         title: "School Event Registration System",
         category: "Event Management",
-        role: "Personal Project Developer",
         employer: "Personal Project",
         method: "Web Development",
         description: "School event registration and management system with event statuses, registration tracking, and QR code scanning.",
@@ -130,7 +121,6 @@ const PROJECTS = [
         id: 10,
         title: "Resort Booking System",
         category: "Booking Management",
-        role: "Personal Project Developer",
         employer: "Personal Project",
         method: "Web Development",
         description: "Resort booking system with user accounts, role-based access, booking records, and guest information.",
@@ -143,7 +133,6 @@ const PROJECTS = [
         id: 11,
         title: "Estrella Foodhub POS",
         category: "Point of Sale",
-        role: "Personal Project Developer",
         employer: "Personal Project",
         method: "Web Development",
         description: "Food business POS system supporting sales transactions and database-backed business operations.",
@@ -156,7 +145,6 @@ const PROJECTS = [
         id: 12,
         title: "Lemonade",
         category: "Game Development",
-        role: "Game Developer",
         employer: "Personal Project",
         method: "Game Development",
         description: "Open-world survival game project featuring terrain exploration, mountains, rivers, lakes, forests, and environmental exploration.",
@@ -169,7 +157,6 @@ const PROJECTS = [
         id: 13,
         title: "Vape Shop Inventory System",
         category: "Inventory Management",
-        role: "System Developer (In Progress)",
         employer: "Proposed Client",
         method: "Web Development",
         description: "Proposed client system for tracking product quantities and automatically deducting stock when purchases are recorded.",
@@ -225,50 +212,42 @@ function initSmoothScroll() {
     });
 }
 
-// Render Projects
+
+ // Render Projects
 function renderProjects() {
     const projectsGrid = document.getElementById('projectsGrid');
-    
+
     if (!projectsGrid) return;
-    
+
     projectsGrid.innerHTML = '';
-    
+
     PROJECTS.forEach(project => {
         const projectCard = document.createElement('article');
         projectCard.className = 'project-card';
-        
-        const techTags = project.technologies.map(tech => 
+
+        const techTags = (project.technologies || []).map(tech =>
             '<span class="project-tech-tag">' + escapeHtml(tech) + '</span>'
         ).join('');
-        
-        let roleHtml = '';
-        if (project.role) {
-            roleHtml = '<div class="project-role"><span class="project-role-label">Role:</span> <span class="project-role-value">' + escapeHtml(project.role) + '</span></div>';
-        }
-        
-        const repoLink = project.repoUrl 
-            ? '<a href="' + escapeHtml(project.repoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Repository →</a>'
-            : '<span class="project-link project-link-disabled">' + (project.status === 'proposed' ? 'Proposed' : project.status === 'internship' ? 'NCIP Internship Project' : 'Not published') + '</span>';
-        
-        const demoLink = project.demoUrl 
-            ? '<a href="' + escapeHtml(project.demoUrl) + '" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>'
+
+        const repoUrl = project.github || project.repository || project.repo || '';
+        const demoUrl = project.demo || project.demoUrl || '';
+
+        const repoLink = repoUrl
+            ? '<a href="' + escapeHtml(repoUrl) + '" target="_blank" rel="noopener noreferrer">Repository</a>'
             : '';
-        
-        projectCard.innerHTML = 
-            '<div class="project-header">' +
-                '<div class="project-header-content">' +
-                    '<h3 class="project-title">' + escapeHtml(project.title) + '</h3>' +
-                    (project.category ? '<span class="project-category">' + escapeHtml(project.category) + '</span>' : '') +
-                '</div>' +
-            '</div>' +
-            '<p class="project-description">' + escapeHtml(project.description) + '</p>' +
-            roleHtml +
-            (techTags ? '<div class="project-tech">' + techTags + '</div>' : '') +
-            '<div class="project-links">' +
-                repoLink +
-                demoLink +
+
+        const demoLink = demoUrl
+            ? '<a href="' + escapeHtml(demoUrl) + '" target="_blank" rel="noopener noreferrer">Live Demo</a>'
+            : '';
+
+        projectCard.innerHTML =
+            '<div class="project-content">' +
+                '<h3 class="project-title">' + escapeHtml(project.name || project.title || '') + '</h3>' +
+                '<p class="project-description">' + escapeHtml(project.description || '') + '</p>' +
+                (techTags ? '<div class="project-tech">' + techTags + '</div>' : '') +
+                ((repoLink || demoLink) ? '<div class="project-links">' + repoLink + demoLink + '</div>' : '') +
             '</div>';
-        
+
         projectsGrid.appendChild(projectCard);
     });
 }
