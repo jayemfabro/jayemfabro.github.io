@@ -171,19 +171,56 @@ const PROJECTS = [
 function initMobileNav() {
     const navToggle = document.getElementById('navToggle');
     const navList = document.getElementById('navList');
-    
-    if (navToggle && navList) {
-        navToggle.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-        
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
-        });
+
+    if (!navToggle || !navList) return;
+
+    function closeMenu() {
+        navList.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation menu');
     }
+
+    function toggleMenu() {
+        const isOpen = !navList.classList.contains('active');
+
+        navList.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Close navigation menu' : 'Open navigation menu'
+        );
+    }
+
+    // Always start closed
+    closeMenu();
+
+    navToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    navList.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('click', (event) => {
+        if (
+            navList.classList.contains('active') &&
+            !navToggle.contains(event.target) &&
+            !navList.contains(event.target)
+        ) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) closeMenu();
+    });
 }
 
 // Smooth Scroll
@@ -383,3 +420,5 @@ if (document.readyState === 'loading') {
 } else {
     init();
 }
+
+
