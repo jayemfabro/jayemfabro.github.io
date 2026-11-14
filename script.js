@@ -312,6 +312,50 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Theme Toggle
+function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeToggleIcon');
+    const html = document.documentElement;
+
+    if (!toggle || !icon) return;
+
+    // Apply saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    html.setAttribute('data-theme', theme);
+    updateIcon(theme, icon);
+
+    // Toggle handler
+    toggle.addEventListener('click', () => {
+        const current = html.getAttribute('data-theme') || 'dark';
+        const next = current === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+        updateIcon(next, icon);
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (localStorage.getItem('theme')) return; // respect user choice
+        const newTheme = e.matches ? 'dark' : 'light';
+        html.setAttribute('data-theme', newTheme);
+        updateIcon(newTheme, icon);
+    });
+}
+
+function updateIcon(theme, icon) {
+    if (!icon) return;
+    if (theme === 'light') {
+        icon.textContent = '☀️';
+        icon.setAttribute('aria-label', 'Switch to dark theme');
+    } else {
+        icon.textContent = '🌙';
+        icon.setAttribute('aria-label', 'Switch to light theme');
+    }
+}
+
 // Initialize
 function init() {
     initMobileNav();
@@ -320,6 +364,7 @@ function init() {
     updateContactLinks();
     initFooterYear();
     initCursorGlow();
+    initThemeToggle();
     
     window.addEventListener('resize', () => {
         const cursorGlow = document.getElementById('cursorGlow');

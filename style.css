@@ -6,10 +6,12 @@
 }
 
 :root {
+    /* Dark theme (default) */
     --bg-primary: #000000;
     --bg-secondary: #050505;
     --bg-tertiary: #0a0a0a;
     --bg-panel: #080808;
+    --header-bg: rgba(0, 0, 0, 0.8);
     
     --border-primary: #1a1a1a;
     --border-glow: #00ff88;
@@ -25,6 +27,25 @@
     --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+[data-theme="light"] {
+    --bg-primary: #f5f5f5;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #fafafa;
+    --bg-panel: #ffffff;
+    --header-bg: rgba(245, 245, 245, 0.85);
+    
+    --border-primary: #e0e0e0;
+    --border-glow: #00cc66;
+    
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-tertiary: #888888;
+    
+    --accent-primary: #00cc66;
+    --accent-secondary: #0099bb;
+    --accent-danger: #cc2244;
 }
 
 html {
@@ -97,7 +118,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: var(--header-bg);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-primary);
     z-index: 100;
@@ -201,6 +222,46 @@ body {
 
 .nav-link-cta::before {
     display: none;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    display: none;
+    width: 44px;
+    height: 24px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.theme-toggle::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background-color: var(--accent-primary);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+[data-theme="light"] .theme-toggle::after {
+    transform: translateX(20px);
+}
+
+.theme-toggle-icon {
+    display: none;
+}
+
+@media (min-width: 769px) {
+    .theme-toggle {
+        display: block;
+    }
 }
 
 /* Main */
@@ -925,15 +986,18 @@ main {
         display: flex;
     }
     
+    .theme-toggle {
+        display: block;
+    }
+    
     .nav-list {
         position: absolute;
         top: 90px;
         left: 0;
         width: 100%;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.98);
+        background-color: var(--bg-primary);
         border-bottom: 1px solid var(--border-primary);
-        display: none;
         gap: 0;
         align-items: flex-start;
     }
@@ -1179,31 +1243,6 @@ main {
     .project-detail-value {
         text-align: left;
     }
-}
-
-/* Project Role */
-.project-role {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    background-color: rgba(0, 255, 136, 0.05);
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    border-radius: 4px;
-    margin-bottom: 0.75rem;
-    font-size: 0.8125rem;
-}
-
-.project-role-label {
-    color: var(--accent-primary);
-    font-family: var(--font-mono);
-    font-weight: 500;
-    flex-shrink: 0;
-}
-
-.project-role-value {
-    color: var(--text-primary);
-    font-weight: 500;
 }
 
 /* Additional Responsive Improvements */
